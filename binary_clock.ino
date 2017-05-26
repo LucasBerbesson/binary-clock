@@ -1,5 +1,11 @@
-int second=0, minute=0, hour=0; //start the time on 00:00:00
+/*
+An open-source binary clock for Arduino.
+Based on the code from by Rob Faludi (http://www.faludi.com)
+Code under (cc) by Lucas Berbesson
+http://creativecommons.org/license/cc-gpl
+*/
 
+int second=0, minute=0, hour=0; //start the time on 00:00:00
 
 int munit,hunit,valm=0,valh=0,ledstats,i;
 // LEDS positions matrix
@@ -26,7 +32,7 @@ void loop() {
   static unsigned long lastTick = 0;
   // counting time here
   if (millis() - lastTick < 1000) {
-    return; 
+    return;
   } else {
     lastTick = millis();
     second++;

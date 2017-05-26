@@ -1,7 +1,7 @@
 /*
 An open-source binary clock for Arduino.
 Based on the code from by Rob Faludi (http://www.faludi.com)
-Code under (cc) by Daniel Spillere Andrade, www.danielandrade.net
+Code under (cc) by Lucas Berbesson
 http://creativecommons.org/license/cc-gpl
 */
 #include <DS3231.h>
