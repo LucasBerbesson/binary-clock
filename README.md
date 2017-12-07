@@ -3,20 +3,20 @@ Here are some codes to customize your [The City Clock](http://www.the-city-clock
 # Available codes
 
 
-- `binary_clock.ino` is the original version of the code. 
+- [click here](https://raw.githubusercontent.com/LucasBerbesson/binary-clock/master/binary_clock/binary_clock.ino) original version of the code. 
 
-- `binary_clock_night_dimmed.ino` is a custom version that will only display the hour column during the night (to lower luminosity)
+- [click here](https://raw.githubusercontent.com/LucasBerbesson/binary-clock/master/binary_clock_night_dimmed/binary_clock_night_dimmed.ino) to get a custom version that will only display the hour column during the night (to lower luminosity)
 
-- `binary_clock_night_off.ino` is a custom version that will shut down the clock between midnight and 8 am
+- [click here](https://raw.githubusercontent.com/LucasBerbesson/binary-clock/master/binary_clock_night_off/binary_clock_night_off2.ino) to get a custom version that will shut down the clock between midnight and 8 am
 
-- `binary_clock_am_pm.ino` is an AM/PM version of the clock
+- [click here](https://raw.githubusercontent.com/LucasBerbesson/binary-clock/master/binary_clock_am_pm/binary_clock_am_pm.ino) to get an AM/PM version of the clock
 
 # How to change the code of the City Clock 
  
  Steps to follow to change the code of the clock : 
  
 1. Download the [Arduino software](https://www.arduino.cc/en/Main/Software)
-2. Copy paste the `.ino` file of your choice inside the software editor
-3. Plug the USB cable of the clock to your computer
+2. Click on one of the links int he section above and copy/paste the code inside the Arduino Editor
+3. Connect the Arduino of the clock to your computer with the USB cable (no need to remove the Arduino from the clock)
 4. Hit the => button in the toolbar of the editor
 5. Wait for your code to upload
