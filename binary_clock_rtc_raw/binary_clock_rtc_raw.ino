@@ -4,16 +4,23 @@ Based on the code from by Rob Faludi (http://www.faludi.com)
 Code under (cc) by Lucas Berbesson
 http://creativecommons.org/license/cc-gpl
 */
+#include <DS3231.h>
+
+// Init the DS3231 using the hardware interface
+DS3231  rtc(SDA, SCL);
+
+// Init a Time-data structure
+Time  t;
+
 
 int second=0, minute=0, hour=0; //start the time on 00:00:00
-
-int munit,hunit,valm=0,valh=0,ledstats,i;
+int munit,hunit,minuteTens,hourTens,valm=0,valh=0,ledstats,i;
 // LEDS positions matrix
 int leds[4][4] = {
-  {17,2,17,1},
-  {17,5,4,3},
-  {9,8,7,6},
-  {13,12,11,10}
+ {17,1,17,0},
+ {17,13,2,3},
+ {10,9,7,4},
+ {11,12,8,5}
 };
 void setup() {
   //set outputs
@@ -22,46 +29,24 @@ void setup() {
     digitalWrite(k, LOW);
 
   }
-  hour = 16;
-  minute = 54;
-  second=0;
+  pinMode(A1, INPUT);
+  pinMode(A2, INPUT);
+  rtc.begin();
 }
 
 void loop() {
+  t = rtc.getTime();
+  second = t.sec;
+  minute = t.min;
+  hour = t.hour;
 
-  static unsigned long lastTick = 0;
-  // counting time here
-  if (millis() - lastTick < 1000) {
-    return;
-  } else {
-    lastTick = millis();
-    second++;
-  }
-
-  // Add 1 minute every 60 seconds
-  if (second >= 60) {
-    minute++;
-    second = 0; // reset seconds
-  }
-
-  // Add 1 hour every 60 minutes
-  if (minute >=60) {
-    hour++;
-    minute = 0; // reset minutes
-  }
-
-  // Add 1 day every 24 hour
-  if (hour >=24) {
-    hour  = 0; // reset hours
-    minute  = 0; // reset minutes
-  }
 
   munit = minute%10; //sets the variable munit and hunit for the unit digits
   hunit = hour%10;
   minuteTens = (int)(minute/10);
   hourTens = (int)(hour/10);
   //minutes units
-  if(munit & 1) {digitalWrite(leds[3][3], HIGH);} else {  digitalWrite(leds[3][3],LOW);}
+  if(munit & 1) {  digitalWrite(leds[3][3], HIGH);} else {  digitalWrite(leds[3][3],LOW);}
   if(munit & 2) {digitalWrite(leds[2][3], HIGH);} else {digitalWrite(leds[2][3],LOW);}
   if(munit & 4) {digitalWrite(leds[1][3], HIGH);} else {digitalWrite(leds[1][3],LOW);}
   if(munit & 8) {digitalWrite(leds[0][3], HIGH);} else {digitalWrite(leds[0][3],LOW);}
@@ -81,4 +66,23 @@ void loop() {
   if(hourTens & 1)  {digitalWrite(leds[3][0], HIGH);} else {digitalWrite(leds[3][0],LOW);}
   if(hourTens & 2)  {digitalWrite(leds[2][0], HIGH);} else {digitalWrite(leds[2][0],LOW);}
 
+   valm = digitalRead(A1);    // add one minute when pressed
+   if(valm== HIGH) {
+   minute++;
+   second=0;
+   rtc.setTime(hour, minute, second);
+   delay(250);
+  }
+
+  valh = digitalRead(A2);    // add one hour when pressed
+   if(valh==HIGH) {
+   hour++;
+   if (hour>24) {
+    hour = 0;
+   }
+   second=0;
+   rtc.setTime(hour, minute, second);
+   delay(250);
+  }
+  delay(50);
 }
