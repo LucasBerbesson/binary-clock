@@ -53,10 +53,13 @@ void loop() {
   hour = t.hour;
 
 
-  if ( 0 < hour && hour < 8) {
-    turnoff();
-  } else {
-    munit = minute%10; //sets the variable munit and hunit for the unit digits
+    if ( 0 < hour && hour < 8) {
+      munit = 0;
+    } else {
+      munit = minute%10;
+    }
+  
+     //sets the variable munit and hunit for the unit digits
     hunit = hour%10;
     minuteTens = (int)(minute/10);
     hourTens = (int)(hour/10);
@@ -81,7 +84,7 @@ void loop() {
     if(hourTens & 1)  {digitalWrite(leds[3][0], HIGH);} else {digitalWrite(leds[3][0],LOW);}
     if(hourTens & 2)  {digitalWrite(leds[2][0], HIGH);} else {digitalWrite(leds[2][0],LOW);}
 
-  }
+ 
 
    valm = digitalRead(A1);    // add one minute when pressed
    if(valm== HIGH) {
