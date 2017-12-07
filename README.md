@@ -5,7 +5,9 @@ Here are some codes to customize your [The City Clock](http://www.the-city-clock
 
 - `binary_clock.ino` is the original version of the code. 
 
-- `binary_clock_night_off.ino` is a custom version that will only display the hour column during the night (to lower luminosity)
+- `binary_clock_night_dimmed.ino` is a custom version that will only display the hour column during the night (to lower luminosity)
+
+- `binary_clock_night_off.ino` is a custom version that will shut down the clock between midnight and 8 am
 
 - `binary_clock_am_pm.ino` is an AM/PM version of the clock
 
