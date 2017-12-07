@@ -3,7 +3,7 @@ Here are some codes to customize your [The City Clock](http://www.the-city-clock
 # Available codes
 
 
-- [click here](https://raw.githubusercontent.com/LucasBerbesson/binary-clock/master/binary_clock/binary_clock.ino) original version of the code. 
+- [click here](https://raw.githubusercontent.com/LucasBerbesson/binary-clock/master/binary_clock/binary_clock.ino) to get the original version of the code. 
 
 - [click here](https://raw.githubusercontent.com/LucasBerbesson/binary-clock/master/binary_clock_night_dimmed/binary_clock_night_dimmed.ino) to get a custom version that will only display the hour column during the night (to lower luminosity)
 
