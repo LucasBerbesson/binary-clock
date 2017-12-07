@@ -23,9 +23,14 @@ Copy/Paste the code in a new file inside the Arduino software. (first remove eve
 
 
 Connect the Arduino of the clock to your computer with the USB cable (no need to remove the Arduino from the clock)  
+Make sure to select the right board in the menu (normally it should be automatic but sometimes it does not work). 
+The type of board should be "Arduino Nano" and the port something like usbserialXXXX
+
+![Screenshot 2](explanation3.jpg)
+
 Hit the => button in the toolbar of the editor to transfer the code  
 
-![Screenshot 2](explanation2.jpg)
+![Screenshot 3](explanation2.jpg)
 
 
 Wait for your code to upload  
