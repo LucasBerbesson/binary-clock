@@ -15,10 +15,18 @@ Here are some codes to customize your [The City Clock](http://www.the-city-clock
  
  Steps to follow to change the code of the clock : 
  
-1. Download the [Arduino software](https://www.arduino.cc/en/Main/Software)
-2. Choose one of the available code above
-3. Copy/Paste the code in a new file inside the Arduino software. (first remove everything in the new file, then copy/paste the entire new code)
-3. Connect the Arduino of the clock to your computer with the USB cable (no need to remove the Arduino from the clock)
-4. Hit the => button in the toolbar of the editor to transfer the code
-5. Wait for your code to upload
-6. Your clock is ready, you can plug it back somewhere else !
+Download the [Arduino software](https://www.arduino.cc/en/Main/Software)  
+Choose one of the available code above  
+Copy/Paste the code in a new file inside the Arduino software. (first remove everything in the new file, then copy/paste the entire new code)  
+
+![Screenshot 1](explanation.jpg)
+
+
+Connect the Arduino of the clock to your computer with the USB cable (no need to remove the Arduino from the clock)  
+Hit the => button in the toolbar of the editor to transfer the code  
+
+![Screenshot 2](explanation2.jpg)
+
+
+Wait for your code to upload  
+Your clock is ready, you can plug it back somewhere else !
