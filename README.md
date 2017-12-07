@@ -9,7 +9,7 @@ Here are some codes to customize your [The City Clock](http://www.the-city-clock
 
 - `binary_clock_am_pm.ino` is an AM/PM version of the clock
 
-# The city clock  
+# How to change the code of the City Clock 
  
  Steps to follow to change the code of the clock : 
  
