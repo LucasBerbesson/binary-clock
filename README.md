@@ -1,6 +1,7 @@
+Here are some codes to customize your [The City Clock](http://www.the-city-clock.com/).  
+
 # Available codes
 
-This is the code of [The City Clock](http://www.the-city-clock.com/).  
 
 - `binary_clock.ino` is the original version of the code. 
 
