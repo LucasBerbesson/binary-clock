@@ -45,9 +45,11 @@ void loop() {
   minute = t.min;
   hour = t.hour;
 
-  if ( 0 <= hour && hour < 7 ) {
-    minute = 0;
-  }
+
+  if ( 12 < hour) {
+    hour = hour - 12;
+  } 
+
 
 
   munit = minute%10; //sets the variable munit and hunit for the unit digits
