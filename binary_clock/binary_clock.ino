@@ -13,7 +13,7 @@ DS3231  rtc(SDA, SCL);
 Time  t;
 
 
-int second=0, minute=0, hour=0; //start the time on 00:00:00
+int second=0, minute=0, hour=0,month=0,date=0; //start the time on 00:00:00
 int munit,hunit,minuteTens,hourTens,valm=0,valh=0,ledstats,i;
 // LEDS positions matrix
 int leds[4][4] = {
@@ -26,8 +26,12 @@ void setup() {
   //set outputs
   for(int k=0;k<=13;k++) {
     pinMode(k, OUTPUT);
+    digitalWrite(k, HIGH);
+    
+  }
+  delay(400); 
+  for(int k=0;k<=13;k++) {
     digitalWrite(k, LOW);
-
   }
   pinMode(A1, INPUT);
   pinMode(A2, INPUT);
@@ -68,21 +72,26 @@ void loop() {
 
    valm = digitalRead(A1);    // add one minute when pressed
    if(valm== HIGH) {
-   minute++;
-   second=0;
-   rtc.setTime(hour, minute, second);
-   delay(250);
+     minute++;
+     if (minute >=59) {
+      minute = 0;
+     }
+     second=0;
+     rtc.setTime(hour, minute, second);
+     delay(100);
   }
 
   valh = digitalRead(A2);    // add one hour when pressed
    if(valh==HIGH) {
    hour++;
-   if (hour>24) {
+   if (hour>=24) {
     hour = 0;
    }
    second=0;
    rtc.setTime(hour, minute, second);
-   delay(250);
+   delay(100);
   }
   delay(50);
 }
+
+
