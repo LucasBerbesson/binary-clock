@@ -16,6 +16,7 @@ Here are some codes to customize your [The City Clock](http://www.the-city-clock
  Steps to follow to change the code of the clock : 
  
 Download the [Arduino software](https://www.arduino.cc/en/Main/Software)  
+Add the [DS3231 library](http://www.rinkydinkelectronics.com/download.php?f=DS3231.zip) and import the .zip file from the Arduino software (Add a library tab)
 Choose one of the available code above  
 Copy/Paste the code in a new file inside the Arduino software. (first remove everything in the new file, then copy/paste the entire new code)  
 
