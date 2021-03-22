@@ -36,3 +36,10 @@ Hit the => button in the toolbar of the editor to transfer the code
 
 Wait for your code to upload  
 Your clock is ready, you can plug it back somewhere else !
+
+
+# Troubleshooting
+
+If your serial port is not showing up as an option in the Arduino app, try a different USB cable.  Some USB cables support charging only, and can not be used for communication.  The USB cable that came with your clock should support USB communication, so use that if you are having problems with your other cables.
+
+If uploading is failing, you might need to change your processor to "ATmega328P (Old Bootloader)".  For more details, see: https://support.arduino.cc/hc/en-us/articles/360016785580-Error-avrdude-stk500-getsync-attempt-X-of-10-not-in-sync-resp-.
